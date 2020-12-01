@@ -7,7 +7,7 @@ enemyImage = loadImage("enemy.png")
 zapSound = loadSound("zap.mp3")
 }
 function setup() {
-  createCanvas(displayWidth,displayHeight);
+  createCanvas(windowWidth,windowHeight);
   score = 0
   gameState = 0
   counter = 100
@@ -19,12 +19,12 @@ function setup() {
 
 function draw() {
   background("black");  
-  randx = random(1,displayWidth-40)
-  randy = random(1,displayHeight-40)
-  enemyx = random(1,displayWidth-45)
-  enemyy = random(1,displayHeight-45)
+  randx = random(1,windowWidth-40)
+  randy = random(1,windowHeight-40)
+  enemyx = random(1,windowWidth-45)
+  enemyy = random(1,windowHeight-45)
   textSize(23)
-  text("Timer: " + counter, displayWidth-120, 30)
+  text("Timer: " + counter, width-120, 30)
   fill("white")
   textSize(23)
   text("Score: " + score,20, 30)
@@ -40,16 +40,16 @@ counter = counter - 1
   enemies.setLifetimeEach(0)
   gameState = 1
   textSize(32)
-  text("Nice job, your score was " + score, displayWidth/2.6,displayHeight/2)
-  text("Press r to retry", displayWidth/2.6, displayHeight/1.7)
+  text("Nice job, your score was " + score, width/2.6,height/2)
+  text("Press r to retry", width/2.6, height/1.7)
  }
  if(numberofredballsthathavebeenclicked>2){
   balls.setLifetimeEach(0)
   enemies.setLifetimeEach(0)
   gameState = 1
   textSize(32)
-  text("You hit too many red balls, your score was " + score, displayWidth/2.6,displayHeight/2)
-  text("Press r to retry", displayWidth/2.6, displayHeight/1.7)
+  text("You hit too many red balls, your score was " + score, width/2.6,height/2)
+  text("Press r to retry", width/2.6, height/1.7)
  }
  for(var ballNumber = 0;ballNumber < balls.length;ballNumber = ballNumber + 1){
 if(mousePressedOver(balls.get(ballNumber)) && gameState === 0){
@@ -77,7 +77,7 @@ if(mousePressedOver(balls.get(ballNumber)) && gameState === 0){
    score = 0
  }
  if(score>60){
-   text("Level 2:")
+   text("Level 2:",width/3,height/5)
    balls.setLifetimeEach(0)
   /* enemies.setLifetimeEach(0)*/
    nextLevel()
