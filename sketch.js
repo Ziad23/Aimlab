@@ -94,7 +94,7 @@ function spawnBalls(){
   }
 }
 function spawnEnemies(){
-  if(frameCount % 50 === 0 && counter>0 && gameState ===0 && counter<61){
+  if(frameCount % 50 === 0 && counter>0 && gameState ===0 && counter<72){
     enemy = createSprite(enemyx,enemyy,40,40)
     enemy.addImage("enemyredball", enemyImage)
     enemy.scale = 0.23
